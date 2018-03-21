@@ -3,6 +3,8 @@ $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -64,7 +66,7 @@ body {
 }
 
 .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
     /* Para evitar que tenga un shaking  */
     backface-visibility: hidden;
@@ -152,16 +154,16 @@ body {
 
 .btn:hover {
     transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
 }
 
 .btn:active {
     transform: translateY(.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
 }
 
 .btn--white {
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-grey-dark;
 }
 
@@ -172,7 +174,7 @@ body {
 
 /* Animacion para el btn */
 .btn--white::after{
-    background-color: #fff;
+    background-color: $color-white;
 }
 
 .btn::after {
