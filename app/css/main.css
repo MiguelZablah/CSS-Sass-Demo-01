@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  /* inherit from body */ }
+  /* inherit from body */
+}
 
 /* rem not suported below 8IE */
 /* Root font-size rem use this */
@@ -12,7 +13,8 @@
 /* Defult font-size is 16px */
 /* Here we set 10px that is 62.5% of 16px */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -20,7 +22,8 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem; }
+  padding: 3rem;
+}
 
 .header {
   position: relative;
@@ -29,29 +32,34 @@ body {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* Para evitar que tenga un shaking  */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   display: block;
@@ -63,47 +71,58 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   /* animation-delay: 3s; */
-  /* animation-iteration-count: 3; */ }
+  /* animation-iteration-count: 3; */
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
+  animation: moveInRight 1s ease-out;
+}
 
 /* Key frames only use 2 propertis: opacity and transform */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
   80% {
-    transform: translateX(2rem); }
+    transform: translateX(2rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 
-/* Sudo selector for btn */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
@@ -111,27 +130,37 @@ body {
   display: inline-block;
   border-radius: 10rem;
   transition: all .2s;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
-.btn:active {
-  transform: translateY(0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
 
 .btn--white {
   background-color: #fff;
-  color: #777; }
+  color: #777;
+}
+
+.btn--white::after {
+  background-color: #fff;
+}
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
 
-/* Animacion para el btn */
-.btn--white::after {
-  background-color: #fff; }
+.btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn::after {
   position: absolute;
@@ -143,8 +172,5 @@ body {
   width: 100%;
   border-radius: 10rem;
   z-index: -1;
-  transition: all .4s; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  transition: all .4s;
+}
