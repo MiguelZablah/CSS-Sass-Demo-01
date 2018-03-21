@@ -1,0 +1,29 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for learning",
+  "main": "index.js",
+  "scripts": {
+    "csass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelZablah/CSS-Sass-Demo-01.git"
+  },
+  "keywords": [
+    "css",
+    "sass"
+  ],
+  "author": "Zablah <miguel12979@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelZablah/CSS-Sass-Demo-01/issues"
+  },
+  "homepage": "https://github.com/MiguelZablah/CSS-Sass-Demo-01#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-strip-css-comments": "^2.0.0"
+  }
+}

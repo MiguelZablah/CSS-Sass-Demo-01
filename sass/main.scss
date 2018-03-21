@@ -1,11 +1,8 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+// Variables
+$color-primary: #7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
 
 *,
 *::after,
@@ -29,7 +26,7 @@ body {
     font-weight: 400;
     /* font-size: 16px; */
     line-height: 1.7;
-    color: #777;
+    color: $color-grey-dark;
     padding: 3rem;
 }
 
@@ -39,8 +36,8 @@ body {
     background-image: 
         linear-gradient(
         to right bottom,
-        #7ed56f8a,
-        #28b4858a), 
+        rgba($color-primary, 0.8),
+        rgba($color-primary-dark, 0.8)),
     url("../img/hero.jpg");
     background-size: cover;
     background-position: top;
@@ -165,7 +162,7 @@ body {
 
 .btn--white {
     background-color: #fff;
-    color: #777;
+    color: $color-grey-dark;
 }
 
 .btn--animated{
