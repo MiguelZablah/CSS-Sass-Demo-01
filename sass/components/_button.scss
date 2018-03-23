@@ -31,6 +31,17 @@
             background-color: $color-white;
         }
     }
+    
+    // Btn color green
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        // --white::after
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+
     // Btn animation
     &--animated{
         animation: moveInBottom .5s ease-out .75s;
