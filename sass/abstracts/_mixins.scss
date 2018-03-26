@@ -6,3 +6,11 @@
         clear: both;
     }
 }
+
+// Center position
+@mixin centerAbso($top:50%, $left:50%, $tTop:-50%, $tLeft:-50%, $tMore:null){
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($tTop, $tLeft) $tMore;
+}
