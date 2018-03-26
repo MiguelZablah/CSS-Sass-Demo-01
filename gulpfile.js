@@ -14,8 +14,8 @@ var sassDir = 'app/css/';
 gulp.task('sass', function () {
 	return gulp.src(sassSrc)
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-	// .pipe(stripCssComments())
-	// .pipe(cleanCSS({compatibility: 'ie8'}))
+	    .pipe(stripCssComments())
+	    .pipe(cleanCSS({compatibility: 'ie9'}))
 		.pipe(gulp.dest(sassDir))
 		.pipe(browserSync.stream());
 });
