@@ -1,6 +1,7 @@
 // Btn block
 .btn{
     // Default style
+    &,
     &:link, 
     &:visited{
         position: relative;
@@ -11,6 +12,10 @@
         border-radius: 10rem;
         transition: all .2s;
         font-size: $default-font-size;
+
+        // Changes for the <button> element
+        border: none;
+        cursor: pointer;
     }
     // Btn on hover
     &:hover{
@@ -48,7 +53,9 @@
         animation-fill-mode: backwards;
     }
     // Btn active
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(.1rem);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
