@@ -14,8 +14,33 @@
 html {
     // This defines what 1rem is
     font-size: 62.5%;
+
+    @include res-media(tab-land){ // width <= 1200?
+        font-size: 56.25%;
+    }
+
+    @include res-media(tab-port){ // width <= 900?
+        font-size: 50%;
+    }
+    
+    @include res-media(big-desk){ // width >= 1800?
+        font-size: 75%; //1rem = 12px, 12/16 = 75%
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 5.5),
+    only screen and (min--moz-device-pixel-ratio: 5.5),
+    only screen and (-o-min-device-pixel-ratio: 5.5/1),
+    only screen and (min-device-pixel-ratio: 5.5){
+        font-size: 60%;
+    }
 }
 
 body{
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include res-media(tab-port){ // width <= 900?
+        padding: 0;
+    }
+    
 }

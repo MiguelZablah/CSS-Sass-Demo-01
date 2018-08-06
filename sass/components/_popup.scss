@@ -10,6 +10,12 @@
     visibility: hidden;
     transition: all .3s;
 
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
     &__content{
         width: 75%;
         background-color: $color-white;
@@ -26,6 +32,16 @@
         width: 33.333333%;
         display: table-cell;
         vertical-align: middle;
+
+        @include res-media(tab-land){
+            width: 100%;
+            display: table-row;
+            vertical-align: top;
+        }
+
+        @include res-media(phone){
+            display: none;
+        }
     }
 
     &__right{
@@ -33,11 +49,26 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+        
+        @include res-media(tab-land){
+            width: 100%;
+            padding: 2rem 3rem;
+        }
+
+        @include res-media(phone){
+            padding: 1rem 2rem;
+        }
     }
 
     &__img{
         display: block;
         width: 100%;
+
+        @include res-media(tab-land){
+            display: inline-block;
+            width: 50%;
+            height: 30rem;
+        }
     }
 
     &__text{
@@ -49,6 +80,11 @@
             column-rule: 1px solid $color-grey-light-2,
             hyphens: auto
         ), webkit moz ms);
+
+        @include res-media(tab-port){
+            font-size: 1.5rem;
+            column-count: 1;
+        }
     }
 
     &:target{
@@ -73,6 +109,20 @@
             display: inline-block;
             transition: all .2s;
             line-height: 1;
+
+            @include res-media(tab-land){
+                top: 0.5rem;
+                right: 1.5rem;
+            }
+           
+            @include res-media(tab-port){
+                font-size: 4rem;
+            }
+            
+            @include res-media(phone){
+                top: .1rem;
+                right: 0.8rem;
+            }
         }
 
         &:hover{

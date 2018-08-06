@@ -16,6 +16,42 @@
     transform: translate($tTop, $tLeft) $tMore;
 }
 
+// Media Query for common
+/*
+0 - 600px Phone
+600 - 900px Tablet portaait
+900 - 1200px Tablet landscape
+[1200 - 18000] is where our normal styles apply
+18000px => Big Desktop
+*/
+/*
+$breakpoint argument choices"
+- phone
+- tab-port
+- tab-land
+- big-desk
+*/
+/* Using em for better user interface since px can't can change when user increment fonts
+* and rems are know to not work so well with media querys on some devices.
+* 1em = 16px
+
+ORDER: Base + typography > general + layout + grid > page layout > components
+*/
+@mixin res-media($breakpoint){
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content };
+  }
+  @if $breakpoint == big-desk {
+    @media (min-width: 112.5em) { @content };
+  }
+}
+
 /// Mixin to prefix several properties at once
 /// @author Hugo Giraudel
 /// @param {Map} $declarations - Declarations to prefix
@@ -25,7 +61,6 @@
     @each $prefix in $prefixes {
       #{'-' + $prefix + '-' + $property}: $value;
     }
-
     // Output standard non-prefixed declaration
     #{$property}: $value;
   }
