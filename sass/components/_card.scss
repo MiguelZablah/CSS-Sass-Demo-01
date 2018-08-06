@@ -169,7 +169,7 @@
         font-weight: 100;
     }
 
-    @include res-media(tab-port){
+    @include res-media(tab-port-touch){
         height: auto;
         border-radius: 3px;
         background-color: $color-white;

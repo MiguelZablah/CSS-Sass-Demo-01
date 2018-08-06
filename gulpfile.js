@@ -27,12 +27,8 @@ gulp.task('serve', function() {
 	});
 
 	gulp.watch(sassSrc, gulp.parallel('sass'));
-	gulp.watch(htmlDir).on('change', function(path, stats) {
-		browserSync.reload;
-	});
+	gulp.watch(htmlDir).on('change', browserSync.reload);
 });
 
-gulp.task('default', gulp.series('sass', function(done) {    
-    // task code here
-    done();
-}));
+// Compile my sass files to css
+gulp.task('default', gulp.series('sass', (done) => done()));
