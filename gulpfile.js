@@ -11,9 +11,9 @@ var htmlDir = 'app/*.html';
 var sassDir = 'app/css/';
 
 // Task Sass compiler
-gulp.task('sass', function () {
+gulp.task('sass', function() {
 	return gulp.src(sassSrc)
-		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	    .pipe(stripCssComments())
 	    .pipe(cleanCSS({compatibility: 'ie9'}))
 		.pipe(gulp.dest(sassDir))
@@ -21,13 +21,18 @@ gulp.task('sass', function () {
 });
 
 // Start server with sass wacher and html watcher
-gulp.task('serve', function () {
+gulp.task('serve', function() {
 	browserSync.init({
 		server: "./app"
 	});
 
-	gulp.watch(sassSrc, ['sass']);
-	gulp.watch(htmlDir).on('change', browserSync.reload);
+	gulp.watch(sassSrc, gulp.parallel('sass'));
+	gulp.watch(htmlDir).on('change', function(path, stats) {
+		browserSync.reload;
+	});
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', gulp.series('sass', function(done) {    
+    // task code here
+    done();
+}));
